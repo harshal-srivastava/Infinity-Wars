@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<head>
+	<title>Harshal</title>
+</head>
+<body onload="startgame()">
+	<canvas id="mycanvas1" height="620" width="1100" style="border:1px solid #d3d3d3;
+    background-color:#f1f1f1; margin-left:125px; position:absolute; background:transparent;"></canvas>
+    <canvas id="mycanvas2" height="620" width="1100" style="border:1px solid #d3d3d3;
+    background-color:#f1f1f1; margin-left:125px; position:absolute; background:transparent;"></canvas>
+    <canvas id="mycanvas3" height="620" width="1100" style="border:1px solid #d3d3d3;
+    background-color:#f1f1f1; margin-left:125px; position:absolute; background:transparent;"></canvas>
+    <canvas id="mycanvas4" height="620" width="1100" style="border:1px solid #d3d3d3;
+    background-color:#f1f1f1; margin-left:125px; position:absolute; background:transparent;"></canvas>
+    <canvas id="mycanvas5" height="620" width="1100" style="border:1px solid #d3d3d3;
+    background-color:#f1f1f1; margin-left:125px; position:absolute; background:transparent;"></canvas>
+    <canvas id="aboutgame1" height="620" width="1100" style="border:1px solid #d3d3d3;
+    background-color:#f1f1f1; margin-left:125px; position:absolute; background:transparent;"></canvas>
+    <canvas id="controls" height="620" width="1100" style="border:1px solid #d3d3d3;
+    background-color:#f1f1f1; margin-left:125px; position:absolute; background:transparent;"></canvas>
+    
+    <script type="text/javascript">
+    var mybackground;
+    var mysound;
+    var gamepiece;
+    var gamepiece2;
+    var h=2;
+    var s=2;
+    var k=5;
+    var l=-5;
+    var line1;
+    var line2;
+    var line3;
+    var line4;
+    var line5;
+    var line6;
+    var line7;
+    var line8;
+    var line9;
+    var war;
+    var war2;
+    var check;
+    var ui1;
+    var ui2;
+    var ui3;
+    var ui4;
+    var ui5;
+    var arrow;
+    var z;
+    var mybackground2;
+    var line9;
+    var line10;
+    var line11;
+    var line12;
+    var line13;
+    var line14;
+    var line15;
+    var line16;
+    var a;
+    var b;
+    var c;
+    var d;
+    var e;
+    var f;
+    var g;
+    var h;
+    var i;
+    var j;
+    var mybackground3;
+    var ag;
+    var ag1;
+    var ag2;
+    var ag3;
+    var ag4;
+    var mybackground4;
+    var c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13;
+    var c14;
+
+    function startgame()
+    {
+        mygamearea.start();
+        mybackground=new component(0, 0, 620, 1100, mygamearea.context1, "background", "harshal2.jpg");
+        mybackground2=new component(0, 0, 620, 1100, mygamearea.context3, "background", "harshal2.jpg");
+        gamepiece=new component(0, 0, 50, 50, mygamearea.context2, "image", "alien2.jpg");
+        gamepiece2=new component(100, 420, 50, 50, mygamearea.context2, "image", "alien5.jpg");
+        line1=new component(40, 40, 530, 20, mygamearea.context2, "image", "cs.jpg");
+        line2=new component(140, 140, 330, 20, mygamearea.context2, "image", "cs.jpg");
+        line3=new component(40, 560, 20, 1020, mygamearea.context2, "image", "cs.jpg");
+        line4=new component(1040, 40, 530, 20, mygamearea.context2, "image", "cs.jpg");
+        line5=new component(40, 40, 20, 1020, mygamearea.context2, "image", "cs.jpg");
+        line6=new component(140, 470, 20, 820, mygamearea.context2, "image", "cs.jpg");
+        line7=new component(940, 150, 330, 20, mygamearea.context2, "image", "cs.jpg");
+        line8=new component(140, 140, 20, 820, mygamearea.context2, "image", "cs.jpg");
+        line9=new component(40, 40, 530, 20, mygamearea.context4, "image", "cs.jpg");
+        line10=new component(140, 140, 330, 20, mygamearea.context4, "image", "cs.jpg");
+        line11=new component(40, 560, 20, 1020, mygamearea.context4, "image", "cs.jpg");
+        line12=new component(1040, 40, 530, 20, mygamearea.context4, "image", "cs.jpg");
+        line13=new component(40, 40, 20, 1020, mygamearea.context4, "image", "cs.jpg");
+        line14=new component(140, 470, 20, 820, mygamearea.context4, "image", "cs.jpg");
+        line15=new component(940, 150, 330, 20, mygamearea.context4, "image", "cs.jpg");
+        line16=new component(140, 140, 20, 820, mygamearea.context4, "image", "cs.jpg");
+        war=new component(150, 355, "monotype corsiva", "150px", mygamearea.context2, "text", "yellow");
+        war2=new component(410, 450, "comic sans ms", "25px", mygamearea.context2, "text", "yellow");
+        ui1=new component(450, 125, "monotype corsiva", "50px", mygamearea.context4, "text", "yellow");
+        ui2=new component(425, 225, "monotype corsiva", "50px", mygamearea.context4, "text", "yellow");
+        ui3=new component(465, 325, "monotype corsiva", "50px", mygamearea.context4, "text", "yellow");
+        ui4=new component(425, 425, "monotype corsiva", "50px", mygamearea.context4, "text", "yellow");
+        ui5=new component(277, 525, "monotype corsiva", "50px", mygamearea.context4, "text", "yellow");
+        arrow=new component(390, 90 , 50, 50, mygamearea.context5, "image", "alien4.jpg");
+        mybackground3=new component(0, 0, 620, 1100, mygamearea.context6, "background", "harshal2.jpg");
+        ag1=new component(160, 75, "monotype corsiva", "50px", mygamearea.context6, "text", "yellow");
+        ag2=new component(260, 225, "monotype corsiva", "50px", mygamearea.context6, "text", "yellow");
+        ag3=new component(400, 375, "monotype corsiva", "50px", mygamearea.context6, "text", "yellow");
+        ag4=new component(130, 525, "monotype corsiva", "50px", mygamearea.context6, "text", "yellow");
+
+        c1=new component(425, 100, "monotype corsiva", "50px", mygamearea.context7, "text", "yellow");
+        c2=new component(150, 200, "monotype corsiva", "50px", mygamearea.context7, "text", "yellow");
+        c3=new component(800, 200, "monotype corsiva", "50px", mygamearea.context7, "text", "yellow");
+        c4=new component(110, 300, "monotype corsiva", "40px", mygamearea.context7, "text", "yellow");
+        c5=new component(110, 350, "monotype corsiva", "40px", mygamearea.context7, "text", "yellow");
+        c6=new component(110, 400, "monotype corsiva", "40px", mygamearea.context7, "text", "yellow");
+        c7=new component(110, 450, "monotype corsiva", "40px", mygamearea.context7, "text", "yellow");
+        c8=new component(160, 500, "monotype corsiva", "40px", mygamearea.context7, "text", "yellow");
+        c9=new component(770, 300, "monotype corsiva", "40px", mygamearea.context7, "text", "yellow");
+        c10=new component(770, 350, "monotype corsiva", "40px", mygamearea.context7, "text", "yellow");
+        c11=new component(770, 400, "monotype corsiva", "40px", mygamearea.context7, "text", "yellow");
+        c12=new component(770, 450, "monotype corsiva", "40px", mygamearea.context7, "text", "yellow");
+        c13=new component(770, 500, "monotype corsiva", "40px", mygamearea.context7, "text", "yellow");
+        mybackground4=new component(0, 0, 620, 1100, mygamearea.context7, "background", "harshal2.jpg");
+
+
+        mysound=new sound("harshal.mp3");
+        mysound.play();
+    }
+    var mygamearea={
+    	canvas1 : document.getElementById("mycanvas1"),
+        canvas2 : document.getElementById("mycanvas2"),
+        canvas3 : document.getElementById("mycanvas3"),
+        canvas4 : document.getElementById("mycanvas4"),
+        canvas5 : document.getElementById("mycanvas5"),
+        canvas6 : document.getElementById("aboutgame1"),
+        canvas7 : document.getElementById("controls"),
+    	start: function()
+    	{
+    		this.context1=this.canvas1.getContext("2d");
+            this.context2=this.canvas2.getContext("2d");
+            this.context3=this.canvas3.getContext("2d");
+            this.context4=this.canvas4.getContext("2d");
+            this.context5=this.canvas5.getContext("2d");
+            this.context6=this.canvas6.getContext("2d");
+            this.context7=this.canvas7.getContext("2d");
+    		this.interval1=setInterval(updategamearea, 20);
+            this.frameNo=0;
+             window.addEventListener('keypress', function(e) {
+                mygamearea.key=e.keyCode;
+            })
+             window.addEventListener('keyup', function(e){
+                mygamearea.key=false;
+             })
+    	},
+        clear1: function()
+        {
+            this.context1.clearRect(0, 0, this.canvas1.width, this.canvas1.height);
+        },
+        clear2: function()
+        {
+            this.context2.clearRect(0, 0, this.canvas2.width, this.canvas2.height);
+        },
+        clear3 : function()
+        {
+            this.context3.clearRect(0, 0, this.canvas3.width, this.canvas3.height);
+        },
+        clear4 : function()
+        {
+            this.context4.clearRect(0, 0, this.canvas4.width, this.canvas4.height);
+        },
+        clear5 : function()
+        {
+            this.context5.clearRect(0, 0, this.canvas5.width, this.canvas5.height);
+        },
+        clear6 : function()
+        {
+            this.context6.clearRect(0, 0, this.canvas6.width, this.canvas6.height);
+        },
+        clear7 : function()
+        {
+            this.context7.clearRect(0, 0, this.canvas7.width, this.canvas7.height);
+        },
+    	stop1: function()
+    	{
+    		clearInterval(this.interval1);
+    	},
+    }
+    function component(x, y, height, width, context, type, color)
+    {
+        this.type=type;
+        if (this.type=="image" || this.type=="background")
+        {
+            this.image=new Image();
+            this.image.src=color;
+        }
+        
+        this.x=x;
+        this.y=y;
+        this.height=height;
+        this.width=width;
+        this.speedX=0;
+        this.speedY=0;
+        this.colour=color;
+        this.update=function()
+        {
+            this.context=context;
+            if (this.type=="image" || this.type=="background")
+            {
+                this.context.drawImage(this.image, this.x, this.y, this.width, this.height);
+                if (this.type=="background")
+                {
+                    this.context.drawImage(this.image, this.x, this.y-this.height, this.width, this.height);
+                }
+            }
+            else
+            {
+                this.context.fillStyle=color;
+                this.context.fillRect(this.x, this.y, this.width, this.height);
+            }
+            if (this.type=="text")
+        {
+            ctx=this.context;
+            ctx.font=this.width + " " + this.height;
+            ctx.fillStyle=color;
+            ctx.fillText(this.text, this.x,this.y);
+        }
+        }
+        this.newpos=function()
+        {
+            this.x+=this.speedX;
+            this.y+=this.speedY;
+            if(this.type=="background")
+            {
+                if (this.y==this.height)
+                {
+                    this.y=0;
+                }
+            }
+        }
+        this.clearh=function()
+        {
+            ctx=this.context;
+            ctx.clearRect(this.x, this.y, this.width, this.height);
+        }
+    }
+    function gamepiecehitbotttom()
+    {
+        if (gamepiece.y+gamepiece.height>mygamearea.canvas2.height)
+        {
+            gamepiece.y=mygamearea.canvas2.height-gamepiece.height;
+            k=0;
+            gamepiece.speedX=5;
+            gamepiece.image.src="alien4.jpg";
+        }
+    }
+    function gamepiecehitright()
+    {
+        if (gamepiece.x+gamepiece.width>mygamearea.canvas2.width)
+        {
+            gamepiece.x=mygamearea.canvas2.width-gamepiece.width;
+            gamepiece.speedY=-5;
+            gamepiece.image.src="alien5.jpg";
+        }
+    }
+    function gamepiecehitup()
+    {
+        if (gamepiece.y<0)
+        {
+            gamepiece.y=0;
+            gamepiece.speedY=0;
+            gamepiece.speedX=-5;
+            gamepiece.image.src="alien3.jpg";
+        }
+    }
+    function gamepiecehitleft()
+    {
+        if (gamepiece.x<0)
+        {
+            gamepiece.x=0;
+            gamepiece.speedY=5;
+            gamepiece.image.src="alien2.jpg";
+        }
+    }
+    function gamepiece2hitbotttom()
+    {
+        if (gamepiece2.y+gamepiece2.height>mygamearea.canvas2.height-100)
+        {
+            gamepiece2.y=mygamearea.canvas2.height-gamepiece2.height-100;
+            l=0;
+            gamepiece2.speedX=-5;
+            gamepiece2.image.src="alien3.jpg";
+        }
+    }
+     function gamepiece2hitright()
+    {
+        if (gamepiece2.x+gamepiece2.width>mygamearea.canvas2.width-100)
+        {
+            gamepiece2.x=mygamearea.canvas2.width-gamepiece2.width-100;
+            gamepiece2.speedY=5;
+            gamepiece2.image.src="alien2.jpg";
+        }
+    }
+    function gamepiece2hitup()
+    {
+        if (gamepiece2.y<100)
+        {
+            gamepiece2.y=100;
+            gamepiece2.speedY=0;
+            gamepiece2.speedX=5;
+            gamepiece2.image.src="alien4.jpg";
+        }
+    }
+    function gamepiece2hitleft()
+    {
+        if (gamepiece2.x<100)
+        {
+            gamepiece2.x=100;
+            gamepiece2.speedY=-5;
+            gamepiece2.image.src="alien5.jpg";
+        }
+    }
+    function gamepiecebig()
+    {
+        gamepiece.width+=h;
+        gamepiece.height+=s;
+        
+    }
+    function gamepiece2big()
+    {
+        gamepiece2.width+=h;
+        gamepiece2.height+=s;
+        
+    }
+    function gamepiecetoobig()
+    {
+        if (gamepiece.width>100 && gamepiece.height>100)
+        {
+            gamepiece.width=100;
+            gamepiece.height=100;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+            
+    }
+    function gamepiece2toobig()
+    {
+        if (gamepiece2.width>100 && gamepiece2.height>100)
+        {
+            gamepiece2.width=100;
+            gamepiece2.height=100;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+            
+    }
+    function everyinterval(n)
+{
+    if ((mygamearea.frameNo / n) % 1 == 0) {return true;}
+    return false;
+}
+function updatebackground()
+{
+    mygamearea.clear3();
+    mygamearea.clear4();
+    mybackground2.update();
+    mybackground2.speedY=1;
+    mybackground2.newpos();
+    mybackground2.update();
+    mygamearea.frameNo+=1;
+    ui1.text="Play Game";
+    ui1.update();
+    ui2.text="How To Play";
+    ui2.update();
+    ui3.text="Controls";
+    ui3.update();
+    ui4.text="About Game";
+    ui4.update();
+    ui5.text="Credits/About The Developer";
+    ui5.update();   
+}
+function arrowhitbottom()
+{
+    if (arrow.y>490)
+    {
+        arrow.y=490;
+    }
+}
+function arrowhitup()
+{
+    if (arrow.y<90)
+    {
+        arrow.y=90;
+    }
+}
+function aboutgame()
+{
+    mygamearea.clear6();
+    mybackground3.update();
+    mybackground3.speedY=1;
+    mybackground3.newpos();
+    mybackground3.update();
+    ag1.text="An Intergalactic fight between two Players";
+    ag2.text="Offline two player Split Screen";
+    ag3.text="Version : 1.0"
+    ag4.text="Design and Programming by : Harshal Srivastava";
+    ag1.update();
+    ag2.update();
+    ag3.update();
+    ag4.update();
+    if (mygamearea.key==113)
+    {
+        clearInterval(ag);
+        mygamearea.clear6();
+        c=setInterval(updatebackground, 20);
+        d=setInterval(updatearrow, 150);
+    }
+}
+function updatecontrols()
+{
+    mygamearea.clear7();
+    mybackground4.update();
+    mybackground4.speedY=1;
+    mybackground4.newpos();
+    mybackground4.update();
+    c1.text="CONTROLS";
+    c2.text="Player 1";
+    c3.text="Player 2";
+    c4.text="Move Left : d";
+    c5.text="Move Right : a";
+    c6.text="Move Up : w";
+    c7.text="Move Down : s";
+    c8.text="Fire : c";
+    c9.text="Move Left : l";
+    c10.text="Move Right : j";
+    c11.text="Move Up : i";
+    c12.text="Move Down : k";
+    c13.text="Fire : n";
+    c1.update();
+    c2.update();
+    c3.update();
+    c4.update();
+    c5.update();
+    c6.update();
+    c7.update();
+    c8.update();
+    c9.update();
+    c10.update();
+    c11.update();
+    c12.update();
+    c13.update();
+    if (mygamearea.key==113)
+    {
+        clearInterval(c14);
+        mygamearea.clear7();
+        e=setInterval(updatebackground, 20);
+        f=setInterval(updatearrow, 150);
+    }
+}
+function updatearrow()
+{
+    mygamearea.clear5();
+    
+    if (mygamearea.key==115)
+        {
+            arrow.y+=100;
+            if (arrow.y==90)
+            {
+                arrow.x=390;
+            }
+            if (arrow.y==190)
+            {
+                arrow.x=370;
+            }
+            if (arrow.y==290)
+            {
+                arrow.x=410;
+            }
+            if (arrow.y==390)
+            {
+                arrow.x=370;
+            }
+            if (arrow.y==490)
+            {
+                arrow.x=230;
+            }
+        }
+        if (mygamearea.key==119)
+        {
+            arrow.y-=100;
+            if (arrow.y==90)
+            {
+                arrow.x=390;
+            }
+            if (arrow.y==190)
+            {
+                arrow.x=370;
+            }
+            if (arrow.y==290)
+            {
+                arrow.x=410;
+            }
+            if (arrow.y==390)
+            {
+                arrow.x=370;
+            }
+            if (arrow.y==490)
+            {
+                arrow.x=230;
+            }
+        }
+        if (arrow.x==370 && arrow.y==390 && mygamearea.key==13)
+        {
+            clearInterval(a);
+            clearInterval(b);
+            mygamearea.clear3();
+            mygamearea.clear4();
+            mygamearea.clear5();
+            ag=setInterval(aboutgame, 20);
+        }
+        if (arrow.x==410 && arrow.y==290 && mygamearea.key==13)
+        {
+            clearInterval(a);
+            clearInterval(b);
+            mygamearea.clear3();
+            mygamearea.clear4();
+            mygamearea.clear5();
+            c14=setInterval(updatecontrols, 20);
+        }
+        arrowhitup();
+        arrowhitbottom();
+        arrow.update();
+}
+    function updategamearea()
+    {
+    mygamearea.clear1();
+    mygamearea.clear2();
+    mybackground.update();
+    mybackground.speedY=1;
+    mybackground.newpos();
+    mybackground.update();
+    mygamearea.frameNo+=1;
+    war.text="Infinity Wars!";
+    war.update();
+    war2.text="Press Spcae to Start Game";
+    war2.update();
+    line1.update();
+    line2.update();
+    line3.update();
+    line4.update();
+    line5.update();
+    line6.update();
+    line7.update();
+    line8.update();
+    war.update();
+    gamepiece.update();
+    gamepiece2.update();
+    gamepiecebig();
+    gamepiece2big();
+    if (gamepiecetoobig()==true)
+    {
+        gamepiece.speedY=k;
+        gamepiecehitbotttom();
+        gamepiecehitright();
+        gamepiecehitup();
+        gamepiecehitleft();
+    }
+    if (gamepiece2toobig()==true)
+    {
+        gamepiece2.speedY=l;
+        gamepiece2hitbotttom();
+        gamepiece2hitright();
+        gamepiece2hitup();
+        gamepiece2hitleft();   
+    }
+    gamepiece.newpos();
+    gamepiece.update();
+    gamepiece2.newpos();
+    gamepiece2.update();
+    if (mygamearea.key==32)
+    {
+        mygamearea.stop1();
+        mygamearea.clear2();
+        mygamearea.clear1();
+        a=setInterval(updatebackground, 20);
+        b=setInterval(updatearrow, 150);
+        
+
+    }
+    }
+    function sound(src)
+    {
+        this.sound=document.createElement("audio");
+        this.sound.src=src;
+        this.sound.setAttribute("preload", "auto");
+        this.sound.setAttribute("controls", "none");
+        this.sound.style.display="none";
+        document.body.appendChild(this.sound);
+        this.play=function()
+        {
+            this.sound.play();
+        }
+        this.stop=function()
+        {
+            this.sound.pause();
+        }
+    }
+    </script>
+</body>
+</html>
